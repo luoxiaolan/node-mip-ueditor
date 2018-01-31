@@ -1,0 +1,14 @@
+{
+  "name": "mip-ueditor-cli",
+  "version": "1.0.0",
+  "description": "make html string pass mip check",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luoxiaolan",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^11.6.2"
+  }
+}
