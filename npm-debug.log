@@ -35,7 +35,7 @@
 21 silly publish   author: { name: 'luoxiaolan' },
 21 silly publish   license: 'ISC',
 21 silly publish   dependencies: { jsdom: '^11.6.2' },
-21 silly publish   gitHead: 'be07098896fed7e10f4bf34feeb246e8e9ce4d0a',
+21 silly publish   gitHead: 'e0053de388b21ce737dab7b0218ec274ad754c97',
 21 silly publish   readme: 'ERROR: No README data found!',
 21 silly publish   _id: 'mip-ueditor-cli@1.0.0',
 21 silly publish   _shasum: '5aa930fe2a4aab49b4134d0f38fc02160025c9c7',
@@ -55,23 +55,47 @@
 27 silly mapToRegistry uri https://registry.npmjs.org/mip-ueditor-cli
 28 verbose publish registryBase https://registry.npmjs.org/
 29 silly publish uploading /Users/baidu/.npm/mip-ueditor-cli/1.0.0/package.tgz
-30 verbose stack Error: auth required for publishing
-30 verbose stack     at CachingRegistryClient.publish (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:30:14)
-30 verbose stack     at /usr/local/lib/node_modules/npm/lib/publish.js:138:14
-30 verbose stack     at mapToRegistry (/usr/local/lib/node_modules/npm/lib/utils/map-to-registry.js:62:3)
-30 verbose stack     at publish_ (/usr/local/lib/node_modules/npm/lib/publish.js:107:3)
-30 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
-30 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
-30 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
-30 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
-30 verbose stack     at /usr/local/lib/node_modules/npm/lib/publish.js:73:5
-30 verbose stack     at RES (/usr/local/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
-31 verbose cwd /Users/baidu/work/project/wallet/mip-ueditor-cli
-32 error Darwin 14.5.0
-33 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
-34 error node v6.9.5
-35 error npm  v3.10.10
-36 error code ENEEDAUTH
-37 error need auth auth required for publishing
-38 error need auth You need to authorize this machine using `npm adduser`
-39 verbose exit [ 1, true ]
+30 verbose request uri https://registry.npmjs.org/mip-ueditor-cli
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 10:43:54
+33 verbose request using bearer token for auth
+34 verbose request id 7293e6b2aada4b60
+35 http request PUT https://registry.npmjs.org/mip-ueditor-cli
+36 http 403 https://registry.npmjs.org/mip-ueditor-cli
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '104',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Thu, 01 Feb 2018 02:43:54 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-hkg17927-HKG',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1517453034.438807,VS0,VE401',
+37 verbose headers   vary: 'Accept-Encoding, Accept' }
+38 verbose request invalidating /Users/baidu/.npm/registry.npmjs.org/mip-ueditor-cli on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : mip-ueditor-cli
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+41 verbose statusCode 403
+42 verbose pkgid mip-ueditor-cli
+43 verbose cwd /Users/baidu/work/project/wallet/mip-ueditor-cli
+44 error Darwin 14.5.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.9.5
+47 error npm  v3.10.10
+48 error code E403
+49 error you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : mip-ueditor-cli
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
