@@ -381,6 +381,5 @@ function init (data) {
     } else if (typeof htmldata === 'string') {
         mipHtml = getMipContent(htmldata);
     }
-    console.log(mipHtml);
     return mipHtml;
 }
