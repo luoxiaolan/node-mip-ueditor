@@ -1,7 +1,4 @@
-/**
- * @file mip ueditor
- * @author luoxiaolan
- */
+#! /usr/bin/env node
 const fs = require('fs');
 const path = require('path');
 const jsdom = require('jsdom');
@@ -18,8 +15,14 @@ fs.stat(htmlfile, function (err, stat) {
                     console.log(err);
                     return;
                 } else {
-                    let mipContent = getMipContent(data);
-                    console.log(mipContent);
+                    let miphtml = init(data);
+                    fs.writeFile(htmlfile + '.mip', JSON.stringify(miphtml), function (err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log('写入成功');
+                        }
+                    });
                 }
             });
         } else {
@@ -358,3 +361,26 @@ function getMipContent (html) {
         mipStyle: mipditor.computeStyle
     };
 };
+
+function init (data) {
+    let htmldata;
+    let mipHtml;
+    
+    try {
+        htmldata = JSON.parse(data);
+    } catch (err) {
+        htmldata = data;
+    }
+    
+    if (typeof htmldata === 'object') {
+        mipHtml = {};
+        Object.keys(htmldata).forEach(function (key) {
+            let html = htmldata[key];
+            mipHtml[key] = getMipContent(html);
+        });
+    } else if (typeof htmldata === 'string') {
+        mipHtml = getMipContent(htmldata);
+    }
+    console.log(mipHtml);
+    return mipHtml;
+}
